@@ -1,7 +1,7 @@
 # テーブル定義書2
 ## 全体
 - PKはidで大丈夫です。
-- テーブル名の頭文字は大文字にしましょう。
+- テーブル名はスネークケースで表記しましょう。
 
 ## admins
 - admin_idにindexがないです。
@@ -10,6 +10,7 @@
 ## users
 - カラム名に略語を使うのはやめましょう。
 - email・passwordで大丈夫です。
+- member_statusだけだと何を表しているか不明です。
 
 ## ships
 - ship_idにindexをつけましょう。
@@ -18,15 +19,15 @@
 ## products
 - stockカラムは不要です。
 - products_idではなくproduct_idです。
+- stock_statusカラムは不要です。
 
 ## discs
 - disc_idにindexつけましょう。
 - products_idではなくproduct_idにしましょう。
-- disc_numカラムはどういった用途ですか？
+- disc_numカラムはnumで大丈夫です？
 
 ## songs
 - 曲名カラムはnameにしましょう。
-- 曲順カラムを持たせましょう。
 
 ## genres
 - ジャンル名カラムはnameなどとしましょう。
@@ -41,12 +42,12 @@
 - buy numカラムはbuy_numカラムとアンダースコアをつけましょう。
 - products_idではなくproduct_idです。
 - Cart item_idではなくcart_item_idにしましょう。
-- 小計金額カラムは必要ありません。
 
 ## sell details
 - products_idではなくproduct_idにしましょう。
 - product_idはFKを持たせましょう。
 - FKとしてsell_idを渡しましょう。
+- 購入時価格を保存するカラムがありません。
 
 ## sells
 - totalだけだと何のトータルかがわかりません。

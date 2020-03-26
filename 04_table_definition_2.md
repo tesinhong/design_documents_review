@@ -1,58 +1,96 @@
 # テーブル定義書2
 ## 全体
 - PKはidで大丈夫です。
+`デフォルトではidというカラムが作成されます`
 - テーブル名はスネークケースで表記しましょう。
+`テーブル名に複数の文字を使うときはアンダースコアを使って文字を繋げましょう。`
 
 ## admins
 - admin_idにindexがないです。
+`idには自動的にindexが割り振られます。`
 - email・passwordで大丈夫です。
+`最初にadminをつけなくても大丈夫です。`
 
 ## users
 - カラム名に略語を使うのはやめましょう。
+`略語があると分かりにくいので一目でわかるようなカラム名にしましょう。`
 - email・passwordで大丈夫です。
+`最初にuserをつけなくても大丈夫です。`
 - member_statusだけだと何を表しているか不明です。
+`member_statusが何を表しているのか分かりません。`
 
 ## ships
 - ship_idにindexをつけましょう。
+`idには自動的にindexが割り振られます。`
 - name・address・code・telで大丈夫です。
+ `最初にshipをつけなくても大丈夫です。`
 
 ## products
 - stockカラムは不要です。
+`stockカラムは必要ですか？`
 - products_idではなくproduct_idです。
+`produc_idと単数形にしましょう。`
 - stock_statusカラムは不要です。
+`stock_statusカラムは必要ですか？`
 
 ## discs
 - disc_idにindexつけましょう。
+`idには自動的にindexが割り振られます。`
 - products_idではなくproduct_idにしましょう。
-- disc_numカラムはnumで大丈夫です？
+`produc_idと単数形にしましょう。`
+- disc_numカラムはnumで大丈夫ですか？
+`最初にdiscをつけなくても大丈夫です。`
 
 ## songs
 - 曲名カラムはnameにしましょう。
+`曲名カラム名を分かりやすくnameとしましょう`
 
 ## genres
 - ジャンル名カラムはnameなどとしましょう。
+`ジャンルカラム名を分かりやすくnameとしましょう`
 
 ## labels
 - レーベル名カラムはnameなどとしましょう。
+`レーベルカラム名を分かりやすくnameとしましょう`
 
 ## artists
 - アーティスト名カラムはnameなどとしましょう。
+`アーティストカラム名を分かりやすくnameとしましょう`
 
 ## cart items
 - buy numカラムはbuy_numカラムとアンダースコアをつけましょう。
+`カラム名に二文字使うときはアンダースコアをつけて繋げましょう。`
+
 - products_idではなくproduct_idです。
+`produc_idと単数形にしましょう。`
+
 - Cart item_idではなくcart_item_idにしましょう。
+`カラム名に二文字以上使うときはアンダースコアをつけて繋げましょう。また全て小文字にしましょう。`
+
+
 
 ## sell details
 - products_idではなくproduct_idにしましょう。
+`produc_idと単数形にしましょう。`
+
 - product_idはFKを持たせましょう。
+`product_idにFKを持たせましょう。`
+
 - FKとしてsell_idを渡しましょう。
+`sell_idにFKを持たせましょう。`
+
 - 購入時価格を保存するカラムがありません。
+`購入した時と今の価格が異なる可能性もあるので購入時価格を保存するカラムを作りましょう。`
 
 ## sells
 - totalだけだと何のトータルかがわかりません。
+`totalは何のトータルですか？`
+
 - FKにsell_details_idは必要ありません。
+`sell_detailsテーブルは子テーブルです。`
+
 - payカラムだけだとそれがどんなカラムわからないので一目でカラムの意味がわかるようなカラム名にしましょう。
+`payカラムは具体的にどんなカラムですか?`
 
 
 # 注意
